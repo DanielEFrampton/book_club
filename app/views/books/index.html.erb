@@ -1,7 +1,7 @@
 <h2>Books Index</h2>
 
 <% @books.each do |book| %>
-  <section id="book-<% book.id %>">
+  <section id="book-<%= book.id %>">
     <p>
       Title: <%= book.title %><br/>
       Author(s): <%= book.author_names.join(', ') %><br/>
