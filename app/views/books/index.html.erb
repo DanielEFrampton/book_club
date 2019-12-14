@@ -4,7 +4,7 @@
   <section id="book-<% book.id %>">
     <p>
       Title: <%= book.title %><br/>
-      Author: <%= book.author.name %><br/>
+      Author(s): <%= book.author_names.join(', ') %><br/>
       Publication Year: <%= book.publication_year %><br/>
       Pages: <%= book.pages %>
     </p>
