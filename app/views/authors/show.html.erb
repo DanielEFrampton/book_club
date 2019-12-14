@@ -2,4 +2,14 @@
 
 <p>
   Name: <%= @author.name %>
+  Average Number of Pages Per Book: <%= @author.average_pages %>
+</p>
+
+<p>
+  Books:
+  <ul>
+    <% @author.books.each do |book| %>
+      <li>Title: <%= book.title %></li>
+    <% end %>
+  </ul>
 </p>
