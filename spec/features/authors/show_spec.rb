@@ -34,18 +34,20 @@ RSpec.describe 'As a user', type: :feature do
       expect(page).to have_content(@sendak.name, count: 2)
       expect(page).to have_link(@sendak.name, href: "/authors/#{@sendak.id}", count: 2)
       expect(page).to have_content(@seuss.name, count: 2)
-      expect(page).to have_content(@seuss.name, href: "/authors/#{@seuss.id}", count: 2)
+      expect(page).to have_link(@seuss.name, href: "/authors/#{@seuss.id}", count: 2)
       expect(page).to have_content(@jordan.name, count: 2)
-      expect(page).to have_content(@jordan.name, href: "/authors/#{@jordan.id}", count: 2)
+      expect(page).to have_link(@jordan.name, href: "/authors/#{@jordan.id}", count: 2)
       expect(page).to have_content(@sanderson.name, count: 1)
-      expect(page).to have_content(@sanderson.name, href: "/authors/#{@sanderson.id}", count: 1)
+      expect(page).to have_link(@sanderson.name, href: "/authors/#{@sanderson.id}", count: 1)
     end
   end
   describe 'When I click the link' do
     it 'I am taken to an Author Show Page with name, title of books, and avg. pages of that author' do
       visit '/books'
 
-      click_on @sendak.name
+      within "#book-#{@book_1.id}" do
+        click_on @sendak.name
+      end
 
       expect(current_path).to eq("/authors/#{@sendak.id}")
       expect(page).to have_content("Name: #{@sendak.name}")
@@ -55,7 +57,9 @@ RSpec.describe 'As a user', type: :feature do
 
       visit '/books'
 
-      click_on @seuss.name
+      within "#book-#{@book_3.id}" do
+        click_on @seuss.name
+      end
 
       expect(current_path).to eq("/authors/#{@seuss.id}")
       expect(page).to have_content("Name: #{@seuss.name}")
@@ -65,7 +69,9 @@ RSpec.describe 'As a user', type: :feature do
 
       visit '/books'
 
-      click_on @jordan.name
+      within "#book-#{@book_5.id}" do
+        click_on @jordan.name
+      end
 
       expect(current_path).to eq("/authors/#{@jordan.id}")
       expect(page).to have_content("Name: #{@jordan.name}")
@@ -75,7 +81,9 @@ RSpec.describe 'As a user', type: :feature do
 
       visit '/books'
 
-      click_on @sanderson.name
+      within "#book-#{@book_5.id}" do
+        click_on @sanderson.name
+      end
 
       expect(current_path).to eq("/authors/#{@sanderson.id}")
       expect(page).to have_content("Name: #{@sanderson.name}")
