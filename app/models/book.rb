@@ -6,4 +6,8 @@ class Book < ApplicationRecord
   def author_names
     authors.pluck(:name)
   end
+
+  def author_count
+    authors.count
+  end
 end
