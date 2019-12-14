@@ -34,8 +34,8 @@ RSpec.describe Book, type: :model do
                           publication_year: 1990,
                           pages: 685)
 
-      expected(book_1.author_count).to eq(2)
-      expected(book_2.author_count).to eq(1)
+      expect(book_1.author_count).to eq(2)
+      expect(book_2.author_count).to eq(1)
     end
   end
 end
