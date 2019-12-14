@@ -32,35 +32,35 @@ RSpec.describe 'As a user', type: :feature do
         expect(page).to have_content("Title: #{@book_1.title}")
         expect(page).to have_content("Pages: #{@book_1.pages}")
         expect(page).to have_content("Publication Year: #{@book_1.publication_year}")
-        expect(page).to have_content("Author(s): #{@sendak.name}")
+        expect(page).to have_content("Author: #{@sendak.name}")
       end
 
       within "#book-#{@book_2.id}" do
         expect(page).to have_content("Title: #{@book_2.title}")
         expect(page).to have_content("Pages: #{@book_2.pages}")
         expect(page).to have_content("Publication Year: #{@book_2.publication_year}")
-        expect(page).to have_content("Author(s): #{@sendak.name}")
+        expect(page).to have_content("Author: #{@sendak.name}")
       end
 
       within "#book-#{@book_3.id}" do
         expect(page).to have_content("Title: #{@book_3.title}")
         expect(page).to have_content("Pages: #{@book_3.pages}")
         expect(page).to have_content("Publication Year: #{@book_3.publication_year}")
-        expect(page).to have_content("Author(s): #{@seuss.name}")
+        expect(page).to have_content("Author: #{@seuss.name}")
       end
 
       within "#book-#{@book_4.id}" do
         expect(page).to have_content("Title: #{@book_4.title}")
         expect(page).to have_content("Pages: #{@book_4.pages}")
         expect(page).to have_content("Publication Year: #{@book_4.publication_year}")
-        expect(page).to have_content("Author(s): #{@seuss.name}")
+        expect(page).to have_content("Author: #{@seuss.name}")
       end
 
       within "#book-#{@book_5.id}" do
         expect(page).to have_content("Title: #{@book_5.title}")
         expect(page).to have_content("Pages: #{@book_5.pages}")
         expect(page).to have_content("Publication Year: #{@book_5.publication_year}")
-        expect(page).to have_content("Author(s): #{@author_3.name}, #{@author_4.name}")
+        expect(page).to have_content("Authors: #{@author_3.name}, #{@author_4.name}")
       end
     end
   end
