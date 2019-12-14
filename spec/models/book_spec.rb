@@ -8,7 +8,7 @@ RSpec.describe Book, type: :model do
   end
 
   describe 'relationships' do
-    it {should have_many :authors}
+    it {should have_many(:authors).through(:author_books)}
   end
 
   describe 'methods' do
