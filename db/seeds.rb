@@ -26,3 +26,6 @@ book_5 = Book.create!(title: "A Memory of Light",
                     publication_year: 2013,
                     pages: 909)
 book_5.authors << [author_3, author_4]
+book_6 = author_3.books.create!(title: "The Eye of the World",
+                    publication_year: 1990,
+                    pages: 685)
