@@ -51,8 +51,8 @@ RSpec.describe 'As a user', type: :feature do
 
       expect(current_path).to eq("/authors/#{@sendak.id}")
       expect(page).to have_content("Name: #{@sendak.name}")
-      expect(page).to have_content("Title: #{@book_1.title}")
-      expect(page).to have_content("Title: #{@book_2.title}")
+      expect(page).to have_content(@book_1.title)
+      expect(page).to have_content(@book_2.title)
       expect(page).to have_content("Average Number of Pages Per Book: 40")
 
       visit '/books'
@@ -63,8 +63,8 @@ RSpec.describe 'As a user', type: :feature do
 
       expect(current_path).to eq("/authors/#{@seuss.id}")
       expect(page).to have_content("Name: #{@seuss.name}")
-      expect(page).to have_content("Title: #{@book_3.title}")
-      expect(page).to have_content("Title: #{@book_4.title}")
+      expect(page).to have_content(@book_3.title)
+      expect(page).to have_content(@book_4.title)
       expect(page).to have_content("Average Number of Pages Per Book: 40")
 
       visit '/books'
@@ -75,8 +75,8 @@ RSpec.describe 'As a user', type: :feature do
 
       expect(current_path).to eq("/authors/#{@jordan.id}")
       expect(page).to have_content("Name: #{@jordan.name}")
-      expect(page).to have_content("Title: #{@book_5.title}")
-      expect(page).to have_content("Title: #{@book_6.title}")
+      expect(page).to have_content(@book_5.title)
+      expect(page).to have_content(@book_6.title)
       expect(page).to have_content("Average Number of Pages Per Book: 797")
 
       visit '/books'
@@ -87,7 +87,7 @@ RSpec.describe 'As a user', type: :feature do
 
       expect(current_path).to eq("/authors/#{@sanderson.id}")
       expect(page).to have_content("Name: #{@sanderson.name}")
-      expect(page).to have_content("Title: #{@book_5.title}")
+      expect(page).to have_content(@book_5.title)
       expect(page).to have_content("Average Number of Pages Per Book: 909")
     end
   end
