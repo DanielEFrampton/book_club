@@ -4,7 +4,11 @@
   <section id="book-<%= book.id %>">
     <p>
       Title: <%= book.title %><br/>
-      <%= "Author".pluralize(book.author_count) %>: <%= book.author_names.join(', ') %><br/>
+        <%= "Author".pluralize(book.author_count) %>:
+        <% book.authors.each do |author| %>
+          <%= link_to author.name, "/authors/#{author.id}" %><%= ", " unless author == book.authors.last %>
+        <% end %>
+        <br/>
       Publication Year: <%= book.publication_year %><br/>
       Pages: <%= book.pages %>
     </p>

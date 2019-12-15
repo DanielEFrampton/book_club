@@ -3,10 +3,6 @@ class Book < ApplicationRecord
   has_many :author_books
   has_many :authors, through: :author_books
 
-  def author_names
-    authors.pluck(:name)
-  end
-
   def author_count
     authors.count
   end
